@@ -1,38 +1,554 @@
-.App {
+/* CSS VARIABLES */
+:root {
+  --primary: #141414;
+  --light: #F3F3F3;
+  --dark: #686868;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--light);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.smoothScroll-btn {
+  position: absolute;
+  margin-left: 90vw;
+  top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  padding-top: 40px;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 289px;
+  max-height: 165px;
+}
+
+.netflixLogo {
+  grid-area: nt;
+  object-fit: cover;
+  width: 100px;
+  max-height: 100%;
+
+  padding-left: 30px;
+  padding-top: 0px;
+}
+
+.netflixLogo img {
+  height: 35px;
+}
+
+#logo {
+  color: #E50914;
+  margin: 0;
+  padding: 0;
+}
+
+
+.main-nav {
+  grid-area: mn;
+  padding: 0 30px 0 20px;
+}
+
+.main-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.main-nav a:hover {
+  color: var(--dark);
+}
+
+.sub-nav {
+  grid-area: sb;
+  padding: 0 40px 0 40px;
+}
+
+.sub-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sub-nav a:hover {
+  color: var(--dark);
+}
+
+
+/* MAIN CONTIANER */
+
+.react-multiple-carousel__arrow {
+  cursor: pointer;
+}
+
+.react-multi-carousel-list {
+  padding-left: 50px;
+}
+
+img {
+  transition: transform .3s;
+  border-radius: 2px;
+}
+
+img:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* LINKS */
+.link {
+  padding: 50px;
+}
+
+.sub-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sub-links a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.sub-links a:hover {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.logos a {
+  padding: 10px;
+}
+
+.logo {
+  color: var(--dark);
+}
+
+.detail-container {
+  height: 667px;
+  width: 94%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-image {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  right: -6%;
+  width: 100%;
+}
+
+.detail-image::after {
+  background: linear-gradient(0deg, #181818 0, hsla(0, 0%, 9%, .987) 1.62%, hsla(0, 0%, 9%, .951) 3.1%, hsla(0, 0%, 9%, .896) 4.5%, hsla(0, 0%, 9%, .825) 5.8%, hsla(0, 0%, 9%, .741) 7.06%, hsla(0, 0%, 9%, .648) 8.24%, hsla(0, 0%, 9%, .55) 9.42%, hsla(0, 0%, 9%, .45) 10.58%, hsla(0, 0%, 9%, .352) 11.76%, hsla(0, 0%, 9%, .259) 12.94%, hsla(0, 0%, 9%, .175) 14.2%, hsla(0, 0%, 9%, .104) 15.5%, hsla(0, 0%, 9%, .049) 16.9%, hsla(0, 0%, 9%, .013) 18.38%, hsla(0, 0%, 9%, 0) 20%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+  max-width: 800px;
+  min-width: 500px;
+  padding: 16px 32px 64px 30px;
+  position: relative;
+  width: 35%;
+  z-index: 2;
+}
+
+.detail-info::after {
+  background: linear-gradient(90deg, #181818 10%, hsla(0, 0%, 9%, .98) 20%, hsla(0, 0%, 9%, .97) 25%, hsla(0, 0%, 9%, .95) 35%, hsla(0, 0%, 9%, .94) 40%, hsla(0, 0%, 9%, .92) 45%, hsla(0, 0%, 9%, .9) 50%, hsla(0, 0%, 9%, .87) 55%, hsla(0, 0%, 9%, .82) 60%, hsla(0, 0%, 9%, .75) 65%, hsla(0, 0%, 9%, .63) 70%, hsla(0, 0%, 9%, .45) 75%, hsla(0, 0%, 9%, .27) 80%, hsla(0, 0%, 9%, .15) 85%, hsla(0, 0%, 9%, .08) 90%, hsla(0, 0%, 9%, .03) 95%, hsla(0, 0%, 9%, 0));
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: -200px;
+  top: 0;
+  z-index: -1;
+}
+
+.detail-info-title {
+  font-size: 50px;
+}
+
+.detail-info-metadata-item {
+  color: #a3a3a3;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.detail-info-metadata-spacer {
+  color: #a3a3a3;
+  line-height: 18px;
+  margin: 0 4px;
+}
+
+.detail-info-content {
+  margin-top: 20px;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 90vh;
+  gap: 30px;
+}
+
+.flip-card-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+}
+
+.flip-card-inner {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+
+
+.flip-card-back {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flip-card-back>h1 {
+  margin-top: 100px;
+  color: #141414;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.flip-card-front {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+}
+
+#facebook-contact {
+  margin-top: 80px;
+  background-image: url("D:/FPT/Semester5-2/FER201m/lab2/public/images/square-facebook.svg");
+}
+
+#phone-contact {
+  margin-top: 80px;
+  background-image: url("D:/FPT/Semester5-2/FER201m/lab2/public/images/phone-solid.svg");
+}
+
+#email-contact {
+  margin-top: 80px;
+  background-image: url("D:/FPT/Semester5-2/FER201m/lab2/public/images/envelope-solid.svg");
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--dark);
+  margin: 10px;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 900px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+}
+
+@media(max-width: 700px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  .wrapper {
+    font-size: 15px;
+  }
+
+  .smoothScroll-btn {
+    margin-left: 79vw;
+    min-width: 15vw;
+    margin-right: 0;
+  }
+
+  header {
+    margin: 0;
+    padding: 20px 0 0 0;
+    position: static;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "nt"
+      "mn"
+      "sb";
+    text-align: center;
+  }
+
+  .netflixLogo {
+    max-width: 100%;
+    margin: auto;
+    padding-right: 20px;
+  }
+
+  .main-nav {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+
+  .box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1.2);
+  }
+
+  .logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .detail-container {
+    height: 600px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-film-image {
+    background-size: cover;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+.demo {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  box-shadow: 24;
+  z-index: 100;
+}
+
+.modal-film-name {
+  font-size: 200px;
+}
+
+.maturity-number {
+  border: 1px solid #a1a1a1;
+  padding: 0 5px;
+}
+
+.detail-value-prop {
+  box-shadow: 8px 5px 16px 0 rgb(0 0 0 / 37%);
+  margin-bottom: 32px;
+  margin-top: -30px;
+  margin-right: 59px;
+  margin-left: 59px;
+  position: relative;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: linear-gradient(90deg, #333 5%, #181818 95%);
+  display: flex;
+  z-index: 101;
+  padding: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.detail-value-prop-logo {
+  background-image: url("D:/FPT/Semester5-2/FER201m/lab2/public/images/Netflix_2015_N_logo.svg");
+  flex: 0 0 21px;
+  height: 38px;
+  margin-left: 25px;
+  padding: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.detail-value-prop-info {
+
+  padding-left: 15px;
+  align-items: center;
+  flex: auto;
+  flex-direction: row;
+}
+
+.detail-button {
+  letter-spacing: 0 !important;
+  color: #fff !important;
+  background-color: #e50914;
+  background-image: linear-gradient(180deg, #e50914, #db0510);
+  margin-right: 30px !important;
+}
+
+.more-like-this-title {
+  margin-left: 76px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 30px;
+  line-height: 34px;
+}
+
+.about-title {
+
+  text-align: center;
+  margin: 0 0 .4em;
+  font-size: 3.125rem;
+}
+
+.about-detail {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  direction: ltr;
+  font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 1.625rem;
+  font-weight: 400;
+  letter-spacing: 0 !important;
+  padding: 0;
+  max-width: 815px;
+  margin: 2em auto;
+  width: 75%;
+}
+
+.detail-header {
+  background-color: #303030 !important;
+  font-size: 1.625rem;
+  margin: 0 0 8px;
+  color: white !important;
+}
+
+.about-detail-info {
+  text-align: left;
 }
